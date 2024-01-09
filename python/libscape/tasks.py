@@ -10,7 +10,7 @@ from gluish.utils import shellout
 default_data_home = os.path.join(xdg_base_dirs.xdg_data_home(), "libscape")
 
 # task_tag is a unique tag, will appear in each filename
-task_tag = "tag-{}".format(datetime.today())
+task_tag = "tag-{}".format(datetime.date.today())
 
 # config contains configurable values for keys
 config = {
