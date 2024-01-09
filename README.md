@@ -14,7 +14,10 @@ Open bibliographic data landscape, code and report.
 * [ ] issn (2M)
 * [ ] ror (0.1M)
 
+> 846M+
+
 Questions:
 
-* dataset overlaps
-* rough data quality assessment
+* [ ] dataset overlaps, duplicates
+* [ ] rough data quality assessment
+* [ ] unique metadata count
