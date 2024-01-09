@@ -9,7 +9,7 @@ authors = [{name = "Martin Czygan", email = "martin.czygan@gmail.com"}]
 description = "library data landscape report"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["luigi>=3", "xdg-base-dirs>=6"]
+dependencies = ["luigi>=3", "xdg-base-dirs>=6", "gluish>=0.3.0"]
 
 [project.scripts]
 libscape = "libscape.main:main"
