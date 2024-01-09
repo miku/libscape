@@ -1,8 +1,10 @@
+import datetime
 import os
+
+import xdg_base_dirs
+from gluish.format import Zstd
 from gluish.task import BaseTask
 from gluish.utils import shellout
-from gluish.format import Zstd
-import xdg_base_dirs
 
 # default_data_home is the default fs location for all task artifacts
 default_data_home = os.path.join(xdg_base_dirs.xdg_data_home(), "libscape")
@@ -18,7 +20,6 @@ config = {
     # rclone aws:/openalex-snaphot sync dir
     "openalex": "/home/tir/code/miku/refnotes/data/openalex-snapshot",
 }
-
 
 
 class Task(BaseTask):
@@ -62,12 +63,16 @@ class OpenAlexWorksSnapshot(Task):
     76M     sources
     370G    works
     """
+
     def run(self):
-        output = shellout("""
+        output = shellout(
+            """
                           find {dir} -type f -name "*gz" |
                           parallel -j 8 zcat |
                           zstd -c9 >> {output}
-                          """, dir=config["openalex"])
+                          """,
+            dir=config["openalex"],
+        )
         luigi.LocalTarget(output).move(self.output().path)
 
     def output(self):
