@@ -1,7 +1,7 @@
 import os
 from gluish.task import BaseTask
 from gluish.utils import shellout
-from gluish.format import Zst
+from gluish.format import Zstd
 import xdg_base_dirs
 
 # default_data_home is the default fs location for all task artifacts
