@@ -52,6 +52,11 @@ class OpenAlexWorksSnapshot(Task):
     This requires rclone. It should run separately, we only want the path to
     the snapshot here to build a single file version.
 
+    [aws]
+    type = s3
+    provider = AWS
+    region = us-east-1
+
     $ rclone sync --transfers=8 --checkers=16 -P aws:/openalex openalex-snapshot
 
     $ du -hs *
@@ -63,6 +68,7 @@ class OpenAlexWorksSnapshot(Task):
     6.7M    publishers
     76M     sources
     370G    works
+
     """
 
     def run(self):
