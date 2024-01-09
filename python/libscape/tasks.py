@@ -1,6 +1,7 @@
 import datetime
 import os
 
+import luigi
 import xdg_base_dirs
 from gluish.format import Zstd
 from gluish.task import BaseTask
